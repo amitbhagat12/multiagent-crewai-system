@@ -383,11 +383,13 @@ def create_rag_pipeline():
         _bm25_retriever.k = TOP_K
 
         # 5. LLM
+        import os
+
         _llm = ChatGoogleGenerativeAI(
-            model=LLM_MODEL,
-            google_api_key=os.getenv("GOOGLE_API_KEY"),
-            temperature=0.2,
-        )
+           model=LLM_MODEL,
+           google_api_key=os.getenv("GOOGLE_API_KEY"),
+           temperature=0.2
+)
 
         print("RAG pipeline initialised successfully.")
         return {
