@@ -1,14 +1,16 @@
-FROM python:3.11
+FROM python:3.11-slim
 
 WORKDIR /app
 
 COPY requirements.txt .
+
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN pip install --no-cache-dir -r requirements.txt
+# Build FAISS index
+RUN python -c "from app.rag.rag_pipeline import create_rag_pipeline; create_rag_pipeline()"
 
-RUN python rag_pipeline.py
+EXPOSE 8000
 
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
