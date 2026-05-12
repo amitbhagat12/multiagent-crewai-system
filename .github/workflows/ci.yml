@@ -36,15 +36,6 @@ jobs:
           pip install -r requirements.txt
 
       # =========================================================
-      # Optional: Build FAISS Index
-      # =========================================================
-      - name: Build FAISS index
-        run: |
-          python -c "from app.rag.rag_pipeline import create_rag_pipeline; create_rag_pipeline()"
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-
-      # =========================================================
       # Run Tests
       # =========================================================
       - name: Run tests
