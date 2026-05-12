@@ -37,7 +37,7 @@ load_dotenv()
 DATASET_URL = "hf://datasets/virattt/financial-qa-10K/data/train-00000-of-00001.parquet"
 VECTORSTORE_PATH = "vectorstores/faiss_store"
 EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
-LLM_MODEL = "gemini-1.5-flash"
+LLM_MODEL = "gemini-2.5-flash-lite"
 
 CHUNK_SIZE = 300
 CHUNK_OVERLAP = 60
@@ -385,7 +385,6 @@ def create_rag_pipeline():
         # 5. LLM
         _llm = ChatGoogleGenerativeAI(
             model=LLM_MODEL,
-            model="gemini-1.5-flash",
             google_api_key=os.getenv("GOOGLE_API_KEY"),
             temperature=0.2,
         )
