@@ -17,6 +17,7 @@
 # =============================================================================
 
 import os
+from langchain_community.chat_models import ChatOpenAI
 import pandas as pd
 
 from dotenv import load_dotenv
@@ -386,10 +387,12 @@ def create_rag_pipeline():
 
         print("GOOGLE_API_KEY Loaded:", bool(google_api_key))
 
-        _llm = ChatGoogleGenerativeAI(
-          model="gemini-1.5-flash",
-          google_api_key=google_api_key,
-        temperature=0.2
+        from langchain_openai import ChatOpenAI
+
+        _llm = ChatOpenAI(
+          model="gpt-4o-mini",
+          api_key=os.getenv("OPENAI_API_KEY"),
+          temperature=0.2
 )
 
         print("RAG pipeline initialised successfully.")
