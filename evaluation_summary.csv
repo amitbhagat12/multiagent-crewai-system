@@ -1,0 +1,4 @@
+Metric,Baseline,Agentic,Improvement,Threshold,Baseline Status,Agentic Status
+ROUGE-L,0.0268,0.1075,0.0807,0.4,REVIEW,REVIEW
+Faithful,0.0,0.3471,0.3471,0.8,REVIEW,REVIEW
+Relevance,0.0363,0.6411,0.6048,0.75,REVIEW,REVIEW

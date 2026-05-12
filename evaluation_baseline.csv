@@ -1,0 +1,11 @@
+ID,Category,ROUGE-L,Faithful,Relevance
+Q1,Revenue,0.0147,0.0,0.1274
+Q2,Products,0.0147,0.0,-0.0307
+Q3,Risk,0.0426,0.0,0.045
+Q4,Cloud,0.0,0.0,0.0062
+Q5,Cloud,0.0286,0.0,0.0994
+Q6,Risk,0.028,0.0,0.1333
+Q7,Revenue,0.0145,0.0,0.0703
+Q8,Competition,0.0541,0.0,-0.0463
+Q9,Products,0.0282,0.0,-0.066
+Q10,Risk,0.0423,0.0,0.0244
