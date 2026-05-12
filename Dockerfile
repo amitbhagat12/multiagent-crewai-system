@@ -18,8 +18,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Pass Google API key during build
-ARG GOOGLE_API_KEY
-ENV GOOGLE_API_KEY=${GOOGLE_API_KEY}
+ARG OPENAI_API_KEY
+ENV OPENAI_API_KEY=${OPENAI_API_KEY}
 
 # Build FAISS index
 RUN python -c "from app.rag.rag_pipeline import create_rag_pipeline; create_rag_pipeline()"
