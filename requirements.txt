@@ -12,6 +12,7 @@ langchain==0.3.7
 langchain-community==0.3.5
 langchain-openai==0.2.5
 langchain-huggingface==0.1.2
+langchain-google-genai==2.0.5
 
 # Multi-agent framework
 crewai==0.80.0
