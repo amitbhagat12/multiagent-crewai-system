@@ -65,7 +65,9 @@ jobs:
       # =========================================================
       - name: Build Docker image
         run: |
-          docker build -t agentic-rag .
+         docker build \
+         --build-arg GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }} \
+         -t agentic-rag .
 
       # =========================================================
       # Tag Docker Image

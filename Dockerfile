@@ -8,7 +8,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-# Build FAISS index
+ARG GOOGLE_API_KEY
+ENV GOOGLE_API_KEY=$GOOGLE_API_KEY
+
 RUN python -c "from app.rag.rag_pipeline import create_rag_pipeline; create_rag_pipeline()"
 
 EXPOSE 8000
